@@ -5,8 +5,16 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in ai_assistant_ruby.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
+gem "rake"
 
-gem "rspec", "~> 3.0"
+group :development, :test do
+  gem "pry-byebug"
+  gem "rubocop"
+end
 
-gem "rubocop", "~> 1.21"
+group :test do
+  gem "rspec"
+  gem "rspec-parameterized"
+  gem "simplecov"
+  gem "webmock"
+end
